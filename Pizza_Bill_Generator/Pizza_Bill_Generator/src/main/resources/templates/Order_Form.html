@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Place Order</title>
+<link rel="stylesheet" type="text/css" href="Order_Form.css">
+</head>
+<body>
+<header>
+	<div class="logo-container">
+		<img alt="" src="images/logo.png">
+	</div>
+	<div class="nav-container">
+		<p><img alt="%" src="images/deals_icon.png" class="icon">Deals</p>
+  		<p><img alt="%" src="images/cart_icon.png" class="cart_icon">Cart</p>
+		<p><img alt="%" src="images/singin_img.png" class="icon">Sign in</p>
+	</div>
+</header>
+<body>
+	<div class="body">
+		<img class="pizza_img" src="images/Pizza-Background1.jpg">
+	
+		<button type="button" class="order_now" onclick="toggleForm()">Order Now </button>
+		<div class="container1">
+			<div class="content1">
+				<img class="container1_images" src="images/simple_basepizza.jpg">
+				<p>Base Pizza </p>
+			</div>
+			<div class="content2">
+				<img class="container2_images" src="images/bpizza_with_extras.jpg">
+				<p>Base Pizza With Extra Cheese & Toppings</p>
+			</div>
+			<div class=content3>
+				<img class="container3_images" src="images/cheesy_pizza.jpg">
+				<p>Cheese Overloaded Pizza</p>
+			</div>
+		</div>
+		<div class="container2">
+			<div class="content1">
+				<img class="container1_images" src="images/extra_topping.jpg">
+				<p>Tomato, Mozzarella cheese, Basil</p>
+			</div>
+			<div class="content2">
+				<img class="container1_images_delux" src="images/mojo_special.png">
+				<p>Delux Pizza </p>
+			</div>
+		</div>
+		
+		
+		
+		<form id="orderForm" action="/order" method="post" style="display:none;">
+			<div class="form-row">
+				<label for="name">Name:</label> <input type="text" id="name"
+					name="name" required /> <label for="email">Email:</label> <input
+					type="email" id="email" name="email" required />
+			</div>
+			<div class="form-row">
+				<label for="pizzaType">Pizza Type:</label> <select id="pizzaType"
+					name="pizzaType">
+					<option value="base">Base Pizza</option>
+					<option value="deluxe">Deluxe Pizza</option>
+				</select> <label for="pizzaVariant">Pizza Variant:</label> <select
+					id="pizzaVariant" name="pizzaVariant">
+					<option value="veg">Veg</option>
+					<option value="nonveg">Non-Veg</option>
+				</select>
+			</div>
+	
+			<div class="form-row">
+				<label for="extraCheese">Extra Cheese:</label> <input type="checkbox"
+					id="extraCheese" name="extraCheese" /> <label for="extraToppings">Extra
+					Toppings:</label> <input type="checkbox" id="extraToppings"
+					name="extraToppings" /> <label for="takeaway">Takeaway:</label> <input
+					type="checkbox" id="takeaway" name="takeaway" />
+			</div>
+	
+			<button type="submit">Place Order</button>
+		</form>
+	
+		<script>
+			function toggleForm() {
+				var form = document.getElementById("orderForm");
+				if (form.style.display === "none") {
+					form.style.display = "block";
+				} else {
+					form.style.display = "none";
+				}
+			}
+		</script>
+	</div>
+</body>
+</html>
+
+
+
+<!--               By using thymeleaf
+
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<meta charset="ISO-8859-1">
+		<title>Place Order</title>
+	</head>
+	<body>
+		<h1>Place Your Order</h1>
+		<form th:action="@{/order}" th:object="${order}" method="post">
+		    <label for="name">Name:</label>
+		    <input type="text" id="name" th:field="*{user.name}" required/><br/>
+		    
+		    <label for="email">Email:</label>
+		    <input type="email" id="email" th:field="*{user.email}" required/><br/>
+		    
+		    <label for="pizzaType">Pizza Type:</label>
+		    <select id="pizzaType" th:field="*{pizzaType}">
+		        <option value="base">Base Pizza</option>
+		        <option value="deluxe">Deluxe Pizza</option>
+		    </select><br/>
+		    
+		    <label for="pizzaVariant">Pizza Variant:</label>
+		    <select id="pizzaVariant" th:field="*{pizzaVariant}">
+		        <option value="veg">Veg</option>
+		        <option value="nonveg">Non-Veg</option>
+		    </select><br/>
+		    
+		    <label for="extraCheese">Extra Cheese:</label>
+		    <input type="checkbox" id="extraCheese" th:field="*{extraCheese}"/><br/>
+		    
+		    <label for="extraToppings">Extra Toppings:</label>
+		    <input type="checkbox" id="extraToppings" th:field="*{extraToppings}"/><br/>
+		    
+		    <label for="takeaway">Takeaway:</label>
+		    <input type="checkbox" id="takeaway" th:field="*{takeaway}"/><br/>
+		    
+		    <button type="submit">Place Order</button>
+		</form>
+	</body>
+</html>-->
+
+

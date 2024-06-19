@@ -1,0 +1,181 @@
+/* Reset margin and padding for the body */
+body {
+    margin: 0;
+    padding-top: 80px; /* Adjust this value based on your header's height */
+    background: #FFD580;
+}
+
+.body {
+    padding-left: 3%;
+    padding-right: 3%;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: white;
+    padding: 10px 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: rgba(255, 255, 255, 0.1) 0px 1px 1px 0px inset, rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+    z-index: 1000;
+    box-sizing: border-box;
+}
+
+.logo-container {
+    flex: 0 1 auto;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    flex: 1;
+    flex-wrap: wrap;
+    margin-right: 5%;
+}
+
+header img {
+    max-width: 100px;
+    height: auto;
+}
+
+.cart_icon {
+    height: 40px;
+    width: 40px;
+}
+
+.icon {
+    height: 20px;
+    width: 20px;
+    margin-right: 5px;
+}
+
+.nav-container p {
+    display: flex;
+    align-items: center;
+    margin: 0 10px;
+    white-space: nowrap;
+}
+.order_now {
+    display: block;
+    width: 200px; /* Set the desired width */
+    margin: 20px auto; /* Centers the element horizontally with some vertical margin */
+    text-align: center; /* Centers text inside the element */
+    padding: 10px 20px; /* Adjust padding as needed */
+    background-color: orange; /* Initial background color */
+    border: 2px solid black; /* Initial border */
+    color: black; /* Initial text color */
+    font-size: 20px;
+    font-weight: bold; /* Make the text bold */
+    transition: all 0.3s ease-in-out; /* Smooth transition for all properties */
+    border-radius: 10px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor on hover */
+}
+
+.order_now:hover {
+    background-color: black;
+    border: 10px solid orange;
+    color: orange; /* Correct property to change text color */
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 10px;
+    }
+
+    .logo-container {
+        margin-bottom: 10px;
+    }
+
+    .nav-container {
+        justify-content: flex-start;
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
+    .nav-container p {
+        font-size: 14px;
+    }
+
+    .icon {
+        height: 12px;
+        width: 12px;
+    }
+}
+
+.pizza_img {
+    width: 100%;
+    height: 35vw;
+    max-height: 425px;
+    object-fit: cover;
+}
+
+.tagline {
+    margin-top: 1%;
+    display: flex;
+    align-items: center; /* Align items vertically */
+}
+
+.tag {
+    margin-right: 0; /* Remove default margin to avoid spacing issues */
+    background-color: #fad8c4;
+    padding: 25px;
+    border-radius: 35%;
+}
+
+.badge {
+    height: 50px; /* Adjust height as needed */
+    width: auto; /* Maintain aspect ratio */
+    margin-left: 0;
+}
+
+.container1, .container2 {
+    display: flex;
+}
+
+.content1, .content2, .content3 {
+    padding: 2%;
+    background-color: beige;
+    border-radius: 20px;
+    margin: 1%;
+    overflow: hidden; /* To ensure the zoom effect doesn't overflow the container */
+    transition: transform 0.3s ease-in-out; /* Smooth transition for the container */
+}
+
+.container1 p, .container2 p, .content1 p, .content2 p, .content3 p {
+    text-align: center;
+    font-weight: bold;
+    font-size: 1em; /* Adjust the font size as needed */
+    margin-top: 10px;
+    transition: transform 0.3s ease-in-out, font-size 0.3s ease-in-out; /* Smooth transition for the text */
+}
+
+.container1_images, .container2_images, .container3_images, .container1_images_delux {
+    height: 300px;
+    width: 320px;
+    border-radius: 20px;
+    transition: transform 0.3s ease-in-out; /* Smooth transition for the image */
+}
+
+.container1_images_delux {
+    width: 100%;
+}
+
+.content1:hover img, .content2:hover img, .content3:hover img {
+    transform: scale(1); /* Zoom effect for the image */
+}
+
+.content1:hover p, .content2:hover p, .content3:hover p {
+    transform: scale(1); /* Zoom effect for the text */
+    font-size: 1.1em; /* Increase font size on hover */
+}
+
+.content1:hover, .content2:hover, .content3:hover {
+    transform: scale(1.05); /* Slightly zoom the entire container */
+}
